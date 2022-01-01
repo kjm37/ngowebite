@@ -1,0 +1,108 @@
+{%extends "adminbase.html"%}{% load static %}
+{%block content %}
+  <div class="content-wrapper">
+
+
+
+
+   <section class="content">
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-12">
+         <div class="card">
+           <div class="card-header">
+             <h3 class="card-title">DataTable with minimal features & hover style</h3>
+           </div>
+           <!-- /.card-header -->
+           <div class="card-body">
+             <table id="example2" class="table table-bordered table-hover">
+               <thead>
+               <tr>
+                 <th>name</th>
+                 <th>email</th>
+                 <th>mobile</th>
+                 <th>subject</th>
+                  <th>message</th>
+
+                 <th>update</th>
+                 <th>delete</th>
+               </tr>
+               </thead>
+   {% for i in gal %}
+
+               <tbody>
+               <tr>
+                 <td>{{i.name}}</td>
+                 <td>{{i.email}}</td>
+
+
+
+                 <td>{{i.phone}}</td>
+
+                  <td>{{i.subject}}</td>
+
+                   <td>{{i.message}}</td>
+                  <td>
+                    <form action="{% url 'ccfupdat' i.id%}">
+                            <button class="btn btn-outline-warning" data-toggle="tooltip" data-placement="top" title="update">
+                              <span class="iconify" data-icon="bx:bxs-comment-edit"></span></button>
+                          </form>
+
+                        </td>
+
+                 <td><form action="{% url 'ccfdelete_gal' i.id%}">
+                    <button class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Delete">
+                                           <i class="zmdi zmdi-delete"></i></button></form>
+                                           </td>
+
+
+               </tr>
+
+
+               </tbody>
+            {% endfor %}
+             </table>
+           </div>
+           <!-- /.card-body -->
+         </div>
+         <!-- /.card -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </div>
+{%endblock%}

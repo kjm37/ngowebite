@@ -1,0 +1,79 @@
+
+
+{%extends "adminbase.html"%}{% load static %}
+{%block content %}
+  <div class="content-wrapper">
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="">
+                            <div class="">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Profile Input</strong> add event
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="{% url 'ent' %}" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                           {%csrf_token%}
+
+
+                                            <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-input" class=" form-control-label">Event Image</label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-input" name="pic" class="form-control-file">
+                                                </div>
+                                            </div>
+
+                                            <div class="form-group">
+
+                                              <label for="inputName">event name</label>
+                                              <input type="text" id="inputName" name="eventname" class="form-control">
+                                            </div>
+                                                  <div class="form-group">
+                                            <label for="inputName">city name</label>
+                                            <input type="text" id="inputName" name="cityname" class="form-control">
+                                          </div>
+
+
+                                            <div class="form-group">
+                                              <label for="inputDescription">address</label>
+                                              <textarea id="inputDescription" name="address"  class="form-control" rows="4"></textarea>
+                                            </div>
+
+                                            <div class="form-group">
+                                      <label for="inputName">DATE-TIME</label>
+                                      <input type="text" id="inputName" name="date" class="form-control">
+                                    </div>
+                                            <div class="bootstrap-timepicker">
+
+
+                                              <button type="submit" class="btn btn-primary">submit</button>
+
+
+
+
+                                        </div>
+
+
+                                       </div>
+                                         </div>
+                                       </div>
+                                         </div>
+                                       </div>
+                                         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    {%endblock%}

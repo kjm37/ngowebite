@@ -1,0 +1,91 @@
+{%extends "adminbase.html"%}{% load static %}
+{%block content %}
+  <div class="content-wrapper">
+
+    <section class="content">
+     <div class="row">
+       <div class="col-md-12">
+         <div class="card card-primary">
+           <div class="card-header">
+             <h3 class="card-title">General</h3>
+
+             <div class="card-tools">
+               <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+                 <i class="fas fa-minus"></i>
+               </button>
+             </div>
+           </div>
+           <div class="card-body">
+
+                <form action="" method="POST" >
+                  {% csrf_token %}
+             <div class="form-group">
+
+               <label for="inputName">title</label>
+               <input type="text" id="inputName" name="title" value="{{hde.title}}"class="form-control">
+
+                            </div>
+
+               <div class="form-group">
+                 <label for="inputDescription"> Description</label>
+                 <textarea id="inputDescription" name="description"  class="form-control" rows="4">{{hde.description}}</textarea>
+               </div>
+
+
+
+
+
+
+
+
+             </div>
+
+             <button type="submit" class="btn btn-primary">submit</button>
+</form>
+
+
+           </div>
+           <!-- /.card-body -->
+         </div>
+         <!-- /.card -->
+       </div>
+       </div>
+
+
+       </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+        </div>
+        {%endblock%}

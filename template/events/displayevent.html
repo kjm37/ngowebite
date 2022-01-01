@@ -1,0 +1,106 @@
+{%extends "adminbase.html"%}{% load static %}
+{%block content %}
+  <div class="content-wrapper">
+
+
+
+
+   <section class="content">
+   <div class="container-fluid">
+     <div class="row">
+       <div class="col-12">
+         <div class="card">
+           <div class="card-header">
+             <h3 class="card-title">DataTable with minimal features & hover style</h3>
+           </div>
+           <!-- /.card-header -->
+           <div class="card-body">
+             <table id="example2" class="table table-bordered table-hover">
+               <thead>
+               <tr>
+                 <th>eventname</th>
+                 <th>cityname</th>
+                 <th>image</th>
+                  <th>datetime</th>
+                 <th>address</th>
+                 <th>update</th>
+                 <th>delete</th>
+               </tr>
+               </thead>
+   {% for i in x %}
+
+               <tbody>
+               <tr>
+                 <td>{{i.eventname}}</td>
+                 <td>{{i.cityname}}</td>
+
+                 <td> <div class="col-0  text-center">  <a href="{{i.image.url}}" data-toggle="lightbox" data-title="sample 1 - white" data-gallery="gallery">
+                    <img src="{{i.image.url}}" alt="user-avatar" class="img-circle img-fluid">
+                  </div></td>
+
+                 <td>{{i.date}}</td>
+                   <td>{{i.address}}</td>
+                  <td>
+                    <form action="{% url 'upevent' i.id%}">
+                            <button class="btn btn-outline-warning" data-toggle="tooltip" data-placement="top" title="update">
+                              <span class="iconify" data-icon="bx:bxs-comment-edit"></span></button>
+                          </form>
+
+                        </td>
+
+                 <td><form action="{% url 'eventdel' i.id%}">
+                    <button class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Delete">
+                                           <i class="zmdi zmdi-delete"></i></button></form>
+                                           </td>
+
+
+               </tr>
+
+
+               </tbody>
+            {% endfor %}
+             </table>
+           </div>
+           <!-- /.card-body -->
+         </div>
+         <!-- /.card -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+  </div>
+{%endblock%}

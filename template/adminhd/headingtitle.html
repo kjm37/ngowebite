@@ -1,0 +1,92 @@
+{%extends "adminbase.html"%}{% load static %}
+{%block content %}
+<!doctype html>
+
+  <div class="content-wrapper">
+<html lang="en">
+  <head>
+  	<title>Table 07</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+	<section class="ftco-section">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section">FIRST PAGE  TILE DESCRIPTION</h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="table-wrap">
+						<table class="table table-bordered table-dark table-hover">
+						  <thead>
+						    <tr>
+						      <th>#</th>
+						      <th>TITLE</th>
+						      <th>DESCRIPTION</th>
+						      <th>DELETE</th>
+                   <th>UPDATE</th>
+						    </tr>
+						  </thead>
+                {% for i in hde %}
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>{{i.title}}</td>
+						      <td>{{i.description}}</td>
+
+                  <TD>
+
+                    <form action="{% url 'hde' i.id%}">
+                      <button class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Delete">
+                          <i class="zmdi zmdi-delete"></i>
+                      </button>
+                  </form>
+
+                </TD>
+
+              </td>
+
+
+              <TD>  <form action="{% url 'titupdat' i.id%}">
+                        <button class="btn btn-outline-warning" data-toggle="tooltip" data-placement="top" title="update">
+                          <span class="iconify" data-icon="bx:bxs-comment-edit"></span>
+                        </button>
+                      </form>
+                </TD>
+
+
+
+
+
+						    </tr>
+
+						  </tbody>
+                {% endfor %}
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+
+	</body>
+</html>
+
+<script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    </div>
+    {%endblock%}

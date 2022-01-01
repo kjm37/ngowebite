@@ -1,0 +1,83 @@
+
+
+{%extends "adminbase.html"%}{% load static %}
+{%block content %}
+  <div class="content-wrapper">
+            <!-- MAIN CONTENT-->
+            <div class="main-content">
+                <div class="section__content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="">
+                            <div class="">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <strong>Profile Input</strong>   CONTACT FORM
+                                    </div>
+                                    <div class="card-body card-block">
+                                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                                           {%csrf_token%}
+
+
+
+
+                                            <div class="form-group">
+
+                                              <label for="inputName">name</label>
+                                              <input type="text" id="inputName" name="name" value="{{dx.name}}" class="form-control">
+
+                                            </div>
+
+
+
+
+                                            <div class="form-group">
+
+                                              <label for="inputName">email</label>
+                                              <input type="text" id="inputName" name="email"value="{{dx.email}}"  class="form-control">
+
+                                            </div>
+
+                                            <div class="form-group">
+
+                                              <label for="inputName">subject</label>
+                                              <input type="text" id="inputName" name="subject" value="{{dx.subject}}"class="form-control">
+
+                                            </div>
+
+
+                                            <div class="form-group">
+
+                                              <label for="inputName">mobile</label>
+                                              <input type="text" id="inputName" name="phone" value="{{dx.phone}}"  class="form-control">
+                                            </div>
+
+
+
+                                            <div class="form-group">
+                                              <label for="inputDescription">message</label>
+                                              <textarea id="inputDescription" name="message"  class="form-control" rows="4">{{dx.message}}</textarea>
+                                            </div>
+
+                                        </div>
+
+
+                                            <div class="card-footer">
+                                                <button type="submit" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Submit
+                                                </button>
+
+                                            </div>
+                                        </div>
+                                        </form>
+                                    </div>
+
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+    {%endblock%}
